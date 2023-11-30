@@ -13,5 +13,5 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
     rating = 4,
     isClosedTemporarily,
   } = restaurant;
-  return <Text>name </Text>;
+  return <Text>{name} </Text>;
 };
