@@ -14,9 +14,21 @@ export const restaurantsRequest = ({
   });
 };
 
+const restaurantsTransform = ({ results = [] }) => {
+  const mappedResult = results.map((restaurant) => {
+    return {
+      ...restaurant,
+      isOpenNow: restaurant.opening_hours && restaurant.opening_hours.open_now,
+      isClosedTemporarily: restaurant.busines_status === "CLOSED_TEMPORARILY",
+    };
+  });
+  return camelize(mappedResult);
+};
+
 restaurantsRequest()
-  .then((result) => {
-    console.log(camelize(result));
+  .then(restaurantsTransform)
+  .then((transformResponse) => {
+    console.log(transformResponse);
   })
   .catch((err) => {
     console.log("Error");
