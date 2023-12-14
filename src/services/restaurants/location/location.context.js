@@ -14,11 +14,14 @@ export const LocationContextProvider = ({ children }) => {
     console.log(searchKeyword);
     setIsLoading(true);
     setKeyword(searchKeyword);
-    if (!searchKeyword.length) {
+  };
+  // we added this useEffect here is due to prevent from infinite loop
+  useEffect(() => {
+    if (!keyword.length) {
       // don't do anything
       return;
     }
-    locationRequest(searchKeyword.toLowerCase())
+    locationRequest(keyword.toLowerCase())
       .then(locationTransform)
       .then((result) => {
         setIsLoading(false);
@@ -29,11 +32,7 @@ export const LocationContextProvider = ({ children }) => {
         setIsLoading(false);
         setError(err);
       });
-  };
-
-  /*  useEffect(() => {
-    onSearch();
-  }, []); */
+  }, [keyword]);
 
   return (
     <LocationContext.Provider
