@@ -11,7 +11,7 @@ import {
   restaurantsTransform,
 } from "./restaurants.service";
 
-import { LocationContext } from "./location/location.context"; // "../location/location.context";
+import { LocationContext } from "../location/location.context"; // "../location/location.context";
 
 export const RestaurantsContext = createContext();
 
