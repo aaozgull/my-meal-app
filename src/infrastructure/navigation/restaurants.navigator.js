@@ -23,9 +23,9 @@ export const RestaurantsNavigator = () => {
       />
       <RestaurantStack.Screen
         name="RestaurantDetail"
-        component={() => {
+        component={RestaurantDetailScreen} /* {() => {
           <Text>Restaurant Details</Text>;
-        }}
+        }} */
       />
     </RestaurantStack.Navigator>
   );

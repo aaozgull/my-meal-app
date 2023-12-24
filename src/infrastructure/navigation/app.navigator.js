@@ -6,6 +6,8 @@ import { Text } from "react-native";
 
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { SafeArea } from "../../components/utility/safe-area.component";
+import { MapScreen } from "../../features/map/screens/map.screen";
+import MapView from "react-native-maps";
 
 const Tab = createBottomTabNavigator();
 
@@ -22,7 +24,7 @@ const Settings = () => (
 );
 const Map = () => (
   <SafeArea>
-    <Text>Map</Text>
+    <MapView style={{ height: "100%" }} />
   </SafeArea>
 );
 
