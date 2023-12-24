@@ -4,26 +4,25 @@ import { Searchbar } from "react-native-paper";
 
 import { LocationContext } from "../../../services/location/location.context";
 
-//"../../../services/location/location.context";
-
 const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
+  position: absolute;
+  z-index: 999;
+  top: 40px;
+  width: 100%;
 `;
 
 export const Search = () => {
   const { keyword, search } = useContext(LocationContext);
   const [searchKeyword, setSearchKeyword] = useState(keyword);
-
-  /*   useEffect(() => {
-    search(searchKeyword);
-  }, []); */ //this is removed because it is cause of infinite loop.
   useEffect(() => {
     setSearchKeyword(keyword);
-  }, [keyword]); // this is because, whenever search key word change it will affect on map.search
+  }, [keyword]); // this is because, whenever search key word change it will affect on resturant.search
   return (
     <SearchContainer>
       <Searchbar
         placeholder="Search for a location"
+        icon="map"
         value={searchKeyword}
         onSubmitEditing={() => {
           search(searchKeyword);
