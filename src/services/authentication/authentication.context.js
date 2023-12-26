@@ -27,9 +27,11 @@ export const AuthenticationContextProvider = ({ children }) => {
 
   const onLogin = (email, password) => {
     setIsLoading(true);
+    console.log("on Login");
     loginRequest(auth, email, password)
       .then((u) => {
         setUser(u);
+        console.log("on Login set user+" + user);
         setIsLoading(false);
       })
       .catch((e) => {
@@ -39,6 +41,7 @@ export const AuthenticationContextProvider = ({ children }) => {
   };
 
   const onRegister = (email, password, repeatedPassword) => {
+    console.log("on Register");
     setIsLoading(true);
     if (password !== repeatedPassword) {
       setError("Error: Passwords do not match");
@@ -47,6 +50,7 @@ export const AuthenticationContextProvider = ({ children }) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((u) => {
         setUser(u);
+        console.log("on Register set user+" + user);
         setIsLoading(false);
       })
       .catch((e) => {
