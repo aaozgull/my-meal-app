@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Searchbar } from "react-native-paper";
 import { FlatList, Pressable, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
-import { ActivityIndicator, Colors, MD2Colors } from "react-native-paper";
+import { ActivityIndicator, MD2Colors } from "react-native-paper";
 
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
