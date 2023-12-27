@@ -36,6 +36,7 @@ export const AuthenticationContextProvider = ({ children }) => {
       })
       .catch((e) => {
         setIsLoading(false);
+        console.log("on Login Error+" + e);
         setError(e.toString());
       });
   };
