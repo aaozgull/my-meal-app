@@ -6,6 +6,7 @@ import { AuthenticationContext } from "../../services/authentication/authenticat
 export const FavouritesContext = createContext();
 
 export const FavouritesContextProvider = ({ children }) => {
+  const { user } = useContext(AuthenticationContext);
   const [favourites, setFavourites] = useState([]);
 
   //// Save favorite in local storage
