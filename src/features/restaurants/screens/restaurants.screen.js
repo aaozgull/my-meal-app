@@ -11,15 +11,12 @@ import { Search } from "../components/search.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { FavouritesContext } from "../../../services/favourites/favourites.context";
 import { FavouritesBar } from "../../../components/favourites/favourites-bar.component";
+import { RestaurantList } from "../components/restaurant-list.styles";
 
 const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
-const RestaurantList = styled(FlatList).attrs({
-  contentContainerStyle: {
-    padding: 16,
-  },
-})``;
+
 const Loading = styled(ActivityIndicator)`
   margin-left: -25px;
 `;
